@@ -1,4 +1,5 @@
 const body = document.querySelector("body")
+const squares = new Array(16)
 
 createGrid(16)
 
@@ -9,7 +10,7 @@ changGrideSizeButton.addEventListener('click', () => {
 
 const clearButton = document.querySelector("#clearButton")
 clearButton.addEventListener('click', () => {
-    
+    squares.forEach(square => {square.style.backgroundColor = "grey"});
 });
 
 function createGrid(size){
@@ -31,6 +32,7 @@ function createGrid(size){
         square.addEventListener('mouseover', () => {square.style.backgroundColor = "black"})
         grid.classList.add("square")
         grid.appendChild(square)
+        squares.push(square)
     }
 
 }
