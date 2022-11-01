@@ -5,8 +5,6 @@ grid.id = "grid"
 body.classList.add("grid")
 body.appendChild(grid)
 
-const squares = new Array(16)
-
 for (i=1; i<=256; i++) {
     const square = document.createElement("div")
     square.style.height = "50px"
@@ -17,5 +15,15 @@ for (i=1; i<=256; i++) {
     square.addEventListener('mouseover', () => {square.style.backgroundColor = "black"})
     grid.classList.add("square")
     grid.appendChild(square)
-    squares.push(square)
+}
+
+const setGridButton = document.createElement("button")
+setGridButton.textContent = "Change grid size"
+body.classList.add("setGridButton")
+body.appendChild(setGridButton)
+setGridButton.addEventListener('click', () => {changeGridSize()});
+
+function changeGridSize() {
+    const size = prompt("Enter the number of squares you want per side");
+    
 }
