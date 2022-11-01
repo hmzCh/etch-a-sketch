@@ -12,8 +12,9 @@ body {
 #grid {
     max-width: 800px;
     max-height: 800px;
-    outline-color: black;
     outline-style: solid;
+    outline-width: 3px;
+    outline-color: black;
     display: flex;
     flex-wrap: wrap;
 }
