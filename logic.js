@@ -7,6 +7,11 @@ changGrideSizeButton.addEventListener('click', () => {
     createGrid(prompt("Enter the number of squares you want per side"))
 });
 
+const clearButton = document.querySelector("#clearButton")
+clearButton.addEventListener('click', () => {
+    
+});
+
 function createGrid(size){
 
     const grid = document.createElement("div")

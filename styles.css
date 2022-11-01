@@ -1,4 +1,6 @@
 #grid {
-    display: grid;
-    grid-template-columns: 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3%;
+    max-width: 800px;
+    max-height: 800px;
+    display: flex;
+    flex-wrap: wrap;
 }
