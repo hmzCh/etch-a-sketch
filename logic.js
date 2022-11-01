@@ -14,6 +14,7 @@ for (i=1; i<=256; i++) {
     square.style.backgroundColor = "grey"
     square.style.margin = 0
     square.style.border = 0
+    square.addEventListener('mouseover', () => {square.style.backgroundColor = "black"})
     grid.classList.add("square")
     grid.appendChild(square)
     squares.push(square)
