@@ -2,11 +2,10 @@ const body = document.querySelector("body")
 
 createGrid(16)
 
-const setGridButton = document.createElement("button")
-setGridButton.textContent = "Change grid size"
-body.classList.add("setGridButton")
-body.appendChild(setGridButton)
-setGridButton.addEventListener('click', () => {createGrid(prompt("Enter the number of squares you want per side"))});
+const changGrideSizeButton = document.querySelector("#changGrideSizeButton")
+changGrideSizeButton.addEventListener('click', () => {
+    createGrid(prompt("Enter the number of squares you want per side"))
+});
 
 function createGrid(size){
 
