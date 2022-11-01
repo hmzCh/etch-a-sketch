@@ -1,26 +1,29 @@
 const body = document.querySelector("body")
-const squares = new Array(16)
 
-createGrid(16)
+const grid = document.createElement("div")
+grid.id = "grid"
+body.classList.add("grid")
+body.appendChild(grid)
 
-const changGrideSizeButton = document.querySelector("#changGrideSizeButton")
-changGrideSizeButton.addEventListener('click', () => {
-    createGrid(prompt("Enter the number of squares you want per side"))
-});
+let squares = new Array()
+
+setGridSize(16)
 
 const clearButton = document.querySelector("#clearButton")
 clearButton.addEventListener('click', () => {
     squares.forEach(square => {square.style.backgroundColor = "grey"});
 });
 
-function createGrid(size){
+const changGrideSizeButton = document.querySelector("#changGrideSizeButton")
+changGrideSizeButton.addEventListener('click', () => {
+    removeAllChildNodes(grid)
+    setGridSize(prompt("Enter the number of squares you want per side (between 1-100)"))
+});
 
-    const grid = document.createElement("div")
-    grid.id = "grid"
-    body.classList.add("grid")
-    body.appendChild(grid)
+function setGridSize(size){
+    
 
-    squareSize = 50
+    const squareSize = 800/size
 
     for (i=1; i<=size**2; i++) {
         const square = document.createElement("div")
@@ -35,4 +38,10 @@ function createGrid(size){
         squares.push(square)
     }
 
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
