@@ -17,7 +17,11 @@ clearButton.addEventListener('click', () => {
 const changeGridSizeButton = document.querySelector("#changeGridSizeButton")
 changeGridSizeButton.addEventListener('click', () => {
     removeAllChildNodes(grid)
-    setGridSize(prompt("Enter the number of squares you want per side (between 1-100)"))
+    let newSize = prompt("Enter the number of squares you want per side (between 1-100)")
+    while (newSize < 1 || newSize > 100) {
+        newSize = prompt("Enter the number of squares you want per side (between 1-100)")
+    }
+    setGridSize(newSize)
 });
 
 function setGridSize(size){
