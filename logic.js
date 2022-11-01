@@ -11,17 +11,16 @@ setGridSize(16)
 
 const clearButton = document.querySelector("#clearButton")
 clearButton.addEventListener('click', () => {
-    squares.forEach(square => {square.style.backgroundColor = "grey"});
+    squares.forEach(square => {square.style.backgroundColor = "white"});
 });
 
-const changGrideSizeButton = document.querySelector("#changGrideSizeButton")
-changGrideSizeButton.addEventListener('click', () => {
+const changeGridSizeButton = document.querySelector("#changeGridSizeButton")
+changeGridSizeButton.addEventListener('click', () => {
     removeAllChildNodes(grid)
     setGridSize(prompt("Enter the number of squares you want per side (between 1-100)"))
 });
 
 function setGridSize(size){
-    
 
     const squareSize = 800/size
 
@@ -29,10 +28,10 @@ function setGridSize(size){
         const square = document.createElement("div")
         square.style.height = `${(squareSize)}px`
         square.style.width = `${(squareSize)}px`
-        square.style.backgroundColor = "grey"
+        square.style.backgroundColor = "white"
         square.style.margin = 0
         square.style.border = 0
-        square.addEventListener('mouseover', () => {square.style.backgroundColor = "black"})
+        square.addEventListener('mouseover', () => {square.style.backgroundColor = "#3882F6"})
         grid.classList.add("square")
         grid.appendChild(square)
         squares.push(square)

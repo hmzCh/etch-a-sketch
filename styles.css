@@ -1,6 +1,30 @@
+body {
+    font-family: roboto, sans-serif;
+    color: #F9FAF8;
+    background-color: #1F2937;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 #grid {
     max-width: 800px;
     max-height: 800px;
+    outline-color: black;
+    outline-style: solid;
     display: flex;
     flex-wrap: wrap;
+}
+
+#buttonContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#clearButton, #changeGridSizeButton {
+    width: 100px;
+    height: 50px;
 }
